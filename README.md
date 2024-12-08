@@ -54,3 +54,4 @@ For support, questions, or feedback regarding the DesigningUniqueCrewsAndAgents 
 Let's create wonders together with the power and simplicity of crewAI.
 # Akki_Ai
 # designing_unique_crews_and_agents
+# design_crews
