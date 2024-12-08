@@ -1,0 +1,19 @@
+---
+collect_market_data_task:
+  description: 'Search the {market_data_url} for relevant market research data, focusing
+    on the specific area of interest: {research_focus}. Gather the most insightful
+    data points that can inform the analysis.'
+  expected_output: A 1 line collection of insightful market research data relevant to {research_focus}
+    sourced from {market_data_url}.
+  async_execution: false
+  agent: MarketDataCollector
+
+analyze_insights_task:
+  description: 'Analyze the collected market data based on the research focus: {research_focus}.
+    Derive actionable insights that can guide strategic decision-making.'
+  expected_output: A 1 line report detailing actionable insights derived from the market
+    data analysis relevant to {research_focus}.
+  async_execution: false
+  agent: MarketInsightsAnalyzer
+  context:
+  - collect_market_data_task
