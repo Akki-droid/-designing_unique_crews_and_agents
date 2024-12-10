@@ -723,7 +723,7 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "crewai", extras = ["tools"], specifier = ">=0.80.0,<1.0.0" }]
+requires-dist = [{ name = "crewai", extras = ["tools"], specifier = ">=0.85.0,<1.0.0" }]
 
 [[package]]
 name = "distro"
