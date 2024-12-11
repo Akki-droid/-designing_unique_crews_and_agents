@@ -4,7 +4,7 @@ collect_market_data_task1:
     on the specific area of interest: {research_focus}. Gather the most insightful
     data points that can inform the analysis.'
   expected_output: A collection of concise insightful market research data relevant to {research_focus}
-    sourced from {market_data_url}. Update the output with separate section containing {type}
+    sourced from {market_data_url}. Add {type} and its value as separate section.
   async_execution: false
   agent: DataCollector1
 
@@ -12,8 +12,8 @@ collect_market_data_task1:
 analyze_insights_task1:
   description: 'Based on {type},Analyze the collected market data based on the research focus: {research_focus}.
     Derive actionable insights that can guide strategic decision-making.'
-  expected_output: A 2 line report detailing actionable insights derived from the market
-    data analysis relevant to {research_focus}. Update the output with separate section containing {type}
+  expected_output: A 1 line report sharing concise  insights derived from the market
+    data analysis relevant to {research_focus}. Add {type} and its value  as separate section.
   async_execution: false
   agent: DataAnalyser1
   context:
@@ -22,7 +22,7 @@ analyze_insights_task1:
 
 data_output_task1:
   description: 'Based on,Collate the data from insights.'
-  expected_output: A 2 line summary report of actionable insights derived from analyze insights task.
+  expected_output: A 2 line summary report of actionable insights derived from analyze insights task. Add {type} and its value  as separate section.
   async_execution: false
   agent: DataOutput1
   context:

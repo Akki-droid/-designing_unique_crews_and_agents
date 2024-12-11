@@ -12,7 +12,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'type': '2',
+        'type': 'sample_value',
         'market_data_url': 'sample_value',
         'research_focus': 'sample_value'
     }
@@ -32,14 +32,14 @@ def run():
 
 
     if list(inputs.values())[0] == "1":
-        print(f"hello type1 {list(inputs.keys())[0]}")
-        DesigningUniqueCrewsAndAgentsCrew().crew().kickoff(inputs=inputs)
+        print(f"hello type1 {list(inputs.values())[0]}")
+        DesignCrew().crew().kickoff(inputs=inputs)
 
     elif list(inputs.values())[0] == "2":
-        print(f"hello type2 {list(inputs.keys())[0]}")
-        DesignCrew().crew().kickoff(inputs=inputs)
+        print(f"hello type2 {list(inputs.values())[0]}")
+        DesigningUniqueCrewsAndAgentsCrew().crew().kickoff(inputs=inputs)
     else:
-        print(f"hello type3 {inputs.values()[0]}")
+        print(f"hello type3 {list(inputs.values())[0]}")
         print("hello type3 wrong value")
 
 
