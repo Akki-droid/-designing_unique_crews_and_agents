@@ -11,14 +11,14 @@ class DesigningUniqueCrewsAndAgentsCrew():
     def MarketDataCollector(self) -> Agent:
         return Agent(
             config=self.agents_config['MarketDataCollector'],
-            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-5-sonnet-20241022", )
+            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-haiku-20240307", )
         )
 
     @agent
     def MarketInsightsAnalyzer(self) -> Agent:
         return Agent(
             config=self.agents_config['MarketInsightsAnalyzer'],
-            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-5-sonnet-20241022", )
+            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-haiku-20240307", )
         )
 
 
@@ -44,6 +44,7 @@ class DesigningUniqueCrewsAndAgentsCrew():
             process=Process.sequential,
             verbose=True,
         )
+
 @CrewBase
 class DesignCrew():
     """DesigningUniqueCrewsAndAgents crew"""
@@ -51,17 +52,24 @@ class DesignCrew():
     tasks_config = 'config/tasks1.yaml'
 
     @agent
-    def MarketDataCollector1(self) -> Agent:
+    def DataCollector1(self) -> Agent:
         return Agent(
-            config=self.agents_config['MarketDataCollector1'],
-            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-5-sonnet-20241022", ),
+            config=self.agents_config['DataCollector1'],
+            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-haiku-20240307", ),
         )
 
     @agent
-    def MarketDataAnalyser1(self) -> Agent:
+    def DataAnalyser1(self) -> Agent:
         return Agent(
-            config=self.agents_config['MarketDataAnalyser1'],
-            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-5-sonnet-20241022", ),
+            config=self.agents_config['DataAnalyser1'],
+            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-haiku-20240307", ),
+        )
+
+    @agent
+    def DataOutput1(self) -> Agent:
+        return Agent(
+            config=self.agents_config['DataOutput1'],
+            llm=LLM(api_key=os.getenv("ANTHROPIC_API_KEY"), model="anthropic/claude-3-haiku-20240307", ),
         )
 
 
@@ -75,6 +83,12 @@ class DesignCrew():
     def analyze_insights_task1(self) -> Task:
         return Task(
             config=self.tasks_config['analyze_insights_task1'],
+        )
+
+    @task
+    def data_output_task1(self) -> Task:
+        return Task(
+            config=self.tasks_config['data_output_task1'],
         )
 
 

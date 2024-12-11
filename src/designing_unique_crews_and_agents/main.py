@@ -12,7 +12,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'type': '2',
+        'type': 'sample_value',
         'market_data_url': 'sample_value',
         'research_focus': 'sample_value'
     }
@@ -24,13 +24,9 @@ def run():
 
     elif first_value == "2":
         print(f"hello type2 {first_value}")
-
-        inputs = {
-            'market_data_url': 'trial 2',
-            'research_focus': 'akki'
-        }
         DesignCrew().crew().kickoff(inputs=inputs)
     else:
+        print(f"hello type3 {first_value}")
         print("hello type3 wrong value")
 
 
@@ -39,6 +35,7 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
+        'type': '2',
         'market_data_url': 'sample_value',
         'research_focus': 'sample_value'
     }
@@ -63,6 +60,7 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
+        'type': 'sample_value',
         'market_data_url': 'sample_value',
         'research_focus': 'sample_value'
     }
