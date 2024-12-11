@@ -16,7 +16,19 @@ def run():
         'market_data_url': 'sample_value',
         'research_focus': 'sample_value'
     }
-    first_value = list(inputs.values())[0]
+
+    if list(inputs.keys())[0] == "type":
+        first_value = list(inputs.values())[0]
+        print(f"hello key0 {first_value}")
+    elif list(inputs.keys())[1] == "type":
+        first_value = list(inputs.values())[1]
+        print(f"hello key1 {first_value}")
+    elif list(inputs.keys())[2] == "type":
+        first_value = list(inputs.values())[2]
+        print(f"hello key2 {first_value}")
+    else:
+        print("hello type1")
+
 
     if first_value == "1":
         print(f"hello type1 {first_value}")
@@ -35,7 +47,7 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        'type': '2',
+        'type': 'sample_value',
         'market_data_url': 'sample_value',
         'research_focus': 'sample_value'
     }

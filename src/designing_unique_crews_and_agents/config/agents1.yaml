@@ -1,18 +1,18 @@
 DataCollector1:
-  role: Market Data Collector
+  role: Data Collector1
   goal: Gather market research data from specified sources.
   backstory: As the Market Data Collector, you specialize in obtaining relevant market
     research data from various sources, ensuring that the data gathered is comprehensive
     and insightful.
 
 DataAnalyser1:
-  role: Market Data Analyser
+  role: Data Analyser1
   goal: Gather market related data from specified sources and analyse.
   backstory: As the Market Data analyser, you specialize in obtaining relevant market
     research data from various sources, ensuring that the data gathered is comprehensive
     and insightful.
 
 DataOutput1:
-  role:  Data Output
+  role:  Data Output1
   goal: Collate the data outputs and print in structured format.
   backstory: As the Market Data Out, you specialize in collating data
