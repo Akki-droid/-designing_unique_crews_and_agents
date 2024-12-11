@@ -12,10 +12,11 @@ def run():
     Run the crew.
     """
     inputs = {
-        'type': 'sample_value',
+        'type': '2',
         'market_data_url': 'sample_value',
         'research_focus': 'sample_value'
     }
+
 
     if list(inputs.keys())[0] == "type":
         first_value = list(inputs.values())[0]
@@ -30,15 +31,15 @@ def run():
         print("hello type1")
 
 
-    if first_value == "1":
-        print(f"hello type1 {first_value}")
+    if list(inputs.values())[0] == "1":
+        print(f"hello type1 {list(inputs.keys())[0]}")
         DesigningUniqueCrewsAndAgentsCrew().crew().kickoff(inputs=inputs)
 
-    elif first_value == "2":
-        print(f"hello type2 {first_value}")
+    elif list(inputs.values())[0] == "2":
+        print(f"hello type2 {list(inputs.keys())[0]}")
         DesignCrew().crew().kickoff(inputs=inputs)
     else:
-        print(f"hello type3 {first_value}")
+        print(f"hello type3 {inputs.values()[0]}")
         print("hello type3 wrong value")
 
 
@@ -52,8 +53,7 @@ def train():
         'research_focus': 'sample_value'
     }
     try:
-        DesigningUniqueCrewsAndAgentsCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
-
+      DesigningUniqueCrewsAndAgentsCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
 
@@ -62,7 +62,7 @@ def replay():
     Replay the crew execution from a specific task.
     """
     try:
-        DesigningUniqueCrewsAndAgentsCrew().crew().replay(task_id=sys.argv[1])
+       DesigningUniqueCrewsAndAgentsCrew().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
@@ -77,7 +77,7 @@ def test():
         'research_focus': 'sample_value'
     }
     try:
-        DesigningUniqueCrewsAndAgentsCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+       DesigningUniqueCrewsAndAgentsCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while testing the crew: {e}")
